@@ -1,3 +1,13 @@
 cmake_minimum_required(VERSION 2.6)
 project(FORMAT)
 add_library(format.h format.cc)
+
+if(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/googletest/googletest/CMakeLists.txt)
+    add_subdirectory(googletest/googletest)
+    include_directories(googletest/googletest/include)
+    link_directories(${CMAKE_CURRENT_BINARY_DIR}/googletest)
+    enable_testing()
+    add_executable(format_test format_test.cc googletest/googletest/src/gtest_main.cc)
+    target_link_libraries(format_test format gtest)
+    add_test(format_test format_test)
+endif()
