@@ -7,7 +7,8 @@
 #include <string>
 #include <sys/types.h>
 #include <vector>
-
+#include <iostream>
+using namespace std;
 namespace format{
     class FormatError: public std::runtime_error{
         public:
@@ -70,7 +71,7 @@ class Formatter {
     void Format();
 
     public:
-    Formatter(): format_(0) {}
+    Formatter(): format_(0) {std::cout<< "constructor is called" ;}
 
     ArgFormatter operator()(const char* format );
 

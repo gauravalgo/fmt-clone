@@ -1,2 +1,4 @@
 googletest/
 build/
+.cache/
+.vscode/
