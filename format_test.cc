@@ -40,4 +40,6 @@ TEST(FormatterTest, FormatInt) {
                   1.234, 42, 3.13, "str", (void*)1000, (int)'X');
 }
 
+
+
 // TODO
